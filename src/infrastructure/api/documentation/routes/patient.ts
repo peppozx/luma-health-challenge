@@ -1,10 +1,4 @@
-import { z } from 'zod';
-
 import { registry } from '../OpenAPIConfig';
-import {
-  GetPrioritizedPatientsRequestSchema,
-  GetPrioritizedPatientsResponseSchema
-} from '../../validations/patientValidations';
 
 registry.registerPath({
   method: 'post',
@@ -16,7 +10,9 @@ registry.registerPath({
     body: {
       content: {
         'application/json': {
-          schema: GetPrioritizedPatientsRequestSchema,
+          schema: {
+            $ref: '#/components/schemas/GetPrioritizedPatientsRequest',
+          },
         },
       },
     },
@@ -26,7 +22,9 @@ registry.registerPath({
       description: 'Successful response with prioritized patients',
       content: {
         'application/json': {
-          schema: GetPrioritizedPatientsResponseSchema,
+          schema: {
+            $ref: '#/components/schemas/GetPrioritizedPatientsResponse',
+          },
         },
       },
     },
@@ -34,17 +32,8 @@ registry.registerPath({
       description: 'Bad request - Invalid input',
       content: {
         'application/json': {
-          schema: z.object({
-            error: z.object({
-              message: z.string(),
-              statusCode: z.number(),
-            }),
-          }),
-          example: {
-            error: {
-              message: 'Validation failed: facility.location.latitude: Invalid input',
-              statusCode: 400,
-            },
+          schema: {
+            $ref: '#/components/schemas/ErrorResponse',
           },
         },
       },
@@ -53,17 +42,8 @@ registry.registerPath({
       description: 'Internal server error',
       content: {
         'application/json': {
-          schema: z.object({
-            error: z.object({
-              message: z.string(),
-              statusCode: z.number(),
-            }),
-          }),
-          example: {
-            error: {
-              message: 'Internal server error',
-              statusCode: 500,
-            },
+          schema: {
+            $ref: '#/components/schemas/ErrorResponse',
           },
         },
       },

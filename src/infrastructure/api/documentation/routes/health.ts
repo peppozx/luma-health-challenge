@@ -1,5 +1,3 @@
-import { z } from 'zod';
-
 import { registry } from '../OpenAPIConfig';
 
 registry.registerPath({
@@ -13,13 +11,8 @@ registry.registerPath({
       description: 'API is healthy',
       content: {
         'application/json': {
-          schema: z.object({
-            status: z.string(),
-            timestamp: z.string(),
-          }),
-          example: {
-            status: 'ok',
-            timestamp: '2024-01-20T10:30:00.000Z',
+          schema: {
+            $ref: '#/components/schemas/HealthCheckResponse',
           },
         },
       },
