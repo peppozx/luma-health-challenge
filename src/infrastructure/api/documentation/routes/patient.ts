@@ -6,7 +6,6 @@ import {
   GetPrioritizedPatientsResponseSchema
 } from '../../validations/patientValidations';
 
-// Register the prioritized patients endpoint
 registry.registerPath({
   method: 'post',
   path: '/api/patients/prioritized',

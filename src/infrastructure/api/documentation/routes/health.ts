@@ -2,7 +2,6 @@ import { z } from 'zod';
 
 import { registry } from '../OpenAPIConfig';
 
-// Register health check endpoint
 registry.registerPath({
   method: 'get',
   path: '/health',

@@ -6,12 +6,12 @@ extendZodWithOpenApi(z);
 
 const LocationSchema = z.object({
   latitude: z.number()
-    .min(-90)
-    .max(90)
+    .min(-90, { message: 'Latitude must be between -90 and 90' })
+    .max(90, { message: 'Latitude must be between -90 and 90' })
     .openapi({ example: 40.7128, description: 'Latitude coordinate' }),
   longitude: z.number()
-    .min(-180)
-    .max(180)
+    .min(-180, { message: 'Longitude must be between -180 and 180' })
+    .max(180, { message: 'Longitude must be between -180 and 180' })
     .openapi({ example: -74.0060, description: 'Longitude coordinate' }),
 }).openapi({
   description: 'Geographic location coordinates',
