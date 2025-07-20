@@ -1,0 +1,137 @@
+[
+  {
+    "id": "541d25c9-9500-4265-8967-240f44ecf723",
+    "name": "Samir Pacocha",
+    "location": { "latitude": "46.7110", "longitude": "-63.1150" },
+    "age": 46,
+    "acceptedOffers": 49,
+    "canceledOffers": 92,
+    "averageReplyTime": 2598
+  },
+  {
+    "id": "41fd45bc-b166-444a-a69e-9d527b4aee48",
+    "name": "Bernard Mosciski",
+    "location": { "latitude": "-81.0341", "longitude": "144.9963" },
+    "age": 21,
+    "acceptedOffers": 95,
+    "canceledOffers": 96,
+    "averageReplyTime": 1908
+  },
+  {
+    "id": "8f128b48-1b23-4a45-b84f-0c7c17a6b231",
+    "name": "Elena Rodriguez",
+    "location": { "latitude": "40.7580", "longitude": "-73.9855" },
+    "age": 35,
+    "acceptedOffers": 150,
+    "canceledOffers": 20,
+    "averageReplyTime": 180
+  },
+  {
+    "id": "c3d4e5f6-7890-1234-5678-90abcdef1234",
+    "name": "Marcus Johnson",
+    "location": { "latitude": "40.6892", "longitude": "-74.0445" },
+    "age": 52,
+    "acceptedOffers": 85,
+    "canceledOffers": 15,
+    "averageReplyTime": 420
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+    "name": "Sophie Chen",
+    "location": { "latitude": "40.7614", "longitude": "-73.9776" },
+    "age": 28,
+    "acceptedOffers": 5,
+    "canceledOffers": 2,
+    "averageReplyTime": 900
+  },
+  {
+    "id": "f9e8d7c6-b5a4-9382-7160-5f4e3d2c1b0a",
+    "name": "David Thompson",
+    "location": { "latitude": "41.8781", "longitude": "-87.6298" },
+    "age": 67,
+    "acceptedOffers": 120,
+    "canceledOffers": 30,
+    "averageReplyTime": 3600
+  },
+  {
+    "id": "1234abcd-5678-efgh-9012-ijklmnopqrst",
+    "name": "Maria Santos",
+    "location": { "latitude": "40.7489", "longitude": "-73.9680" },
+    "age": 41,
+    "acceptedOffers": 200,
+    "canceledOffers": 10,
+    "averageReplyTime": 240
+  },
+  {
+    "id": "zyx98765-wvu4-3210-tsr0-qponmlkjihgf",
+    "name": "James Wilson",
+    "location": { "latitude": "34.0522", "longitude": "-118.2437" },
+    "age": 58,
+    "acceptedOffers": 45,
+    "canceledOffers": 55,
+    "averageReplyTime": 5400
+  },
+  {
+    "id": "abcdef12-3456-7890-abcd-ef1234567890",
+    "name": "Linda Martinez",
+    "location": { "latitude": "40.7128", "longitude": "-74.0060" },
+    "age": 33,
+    "acceptedOffers": 75,
+    "canceledOffers": 25,
+    "averageReplyTime": 600
+  },
+  {
+    "id": "11111111-2222-3333-4444-555555555555",
+    "name": "Robert Kim",
+    "location": { "latitude": "40.6501", "longitude": "-73.9496" },
+    "age": 72,
+    "acceptedOffers": 30,
+    "canceledOffers": 70,
+    "averageReplyTime": 7200
+  },
+  {
+    "id": "66666666-7777-8888-9999-000000000000",
+    "name": "Emma Davis",
+    "location": { "latitude": "40.7831", "longitude": "-73.9712" },
+    "age": 26,
+    "acceptedOffers": 2,
+    "canceledOffers": 1,
+    "averageReplyTime": 300
+  },
+  {
+    "id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    "name": "Michael Brown",
+    "location": { "latitude": "40.8448", "longitude": "-73.8648" },
+    "age": 49,
+    "acceptedOffers": 180,
+    "canceledOffers": 20,
+    "averageReplyTime": 150
+  },
+  {
+    "id": "ffffffff-eeee-dddd-cccc-bbbbbbbbbbbb",
+    "name": "Sarah Johnson",
+    "location": { "latitude": "51.5074", "longitude": "-0.1278" },
+    "age": 38,
+    "acceptedOffers": 60,
+    "canceledOffers": 40,
+    "averageReplyTime": 2400
+  },
+  {
+    "id": "12121212-3434-5656-7878-909090909090",
+    "name": "Thomas Anderson",
+    "location": { "latitude": "40.7260", "longitude": "-73.9897" },
+    "age": 55,
+    "acceptedOffers": 110,
+    "canceledOffers": 90,
+    "averageReplyTime": 480
+  },
+  {
+    "id": "abababab-cdcd-efef-0101-232323232323",
+    "name": "Jessica Lee",
+    "location": { "latitude": "40.7069", "longitude": "-74.0113" },
+    "age": 31,
+    "acceptedOffers": 8,
+    "canceledOffers": 4,
+    "averageReplyTime": 720
+  }
+]
