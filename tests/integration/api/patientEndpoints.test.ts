@@ -46,7 +46,8 @@ describe('INTEGRATION: Patient API Endpoints', () => {
         .expect(400);
 
       expect(response.body).toHaveProperty('error');
-      expect(response.body.error.message).toContain('Request body is required');
+      expect(response.body.error.message).toContain('Validation failed');
+      expect(response.body.error.message).toContain('facility');
     });
 
     it('should return 400 for missing facility object', async () => {
@@ -56,7 +57,8 @@ describe('INTEGRATION: Patient API Endpoints', () => {
         .expect(400);
 
       expect(response.body).toHaveProperty('error');
-      expect(response.body.error.message).toContain('Facility object is required');
+      expect(response.body.error.message).toContain('Validation failed');
+      expect(response.body.error.message).toContain('facility');
     });
 
     it('should return 400 for missing facility location', async () => {
@@ -66,7 +68,8 @@ describe('INTEGRATION: Patient API Endpoints', () => {
         .expect(400);
 
       expect(response.body).toHaveProperty('error');
-      expect(response.body.error.message).toContain('Facility location is required');
+      expect(response.body.error.message).toContain('Validation failed');
+      expect(response.body.error.message).toContain('facility.location');
     });
 
     it('should return 400 for missing latitude', async () => {
@@ -82,7 +85,8 @@ describe('INTEGRATION: Patient API Endpoints', () => {
         .expect(400);
 
       expect(response.body).toHaveProperty('error');
-      expect(response.body.error.message).toContain('Latitude is required');
+      expect(response.body.error.message).toContain('Validation failed');
+      expect(response.body.error.message).toContain('facility.location.latitude');
     });
 
     it('should return 400 for missing longitude', async () => {
@@ -98,7 +102,8 @@ describe('INTEGRATION: Patient API Endpoints', () => {
         .expect(400);
 
       expect(response.body).toHaveProperty('error');
-      expect(response.body.error.message).toContain('Longitude is required');
+      expect(response.body.error.message).toContain('Validation failed');
+      expect(response.body.error.message).toContain('facility.location.longitude');
     });
 
     it('should return 400 for invalid latitude', async () => {
@@ -149,7 +154,8 @@ describe('INTEGRATION: Patient API Endpoints', () => {
         .expect(400);
 
       expect(response.body).toHaveProperty('error');
-      expect(response.body.error.message).toContain('Latitude and longitude must be numbers');
+      expect(response.body.error.message).toContain('Validation failed');
+      expect(response.body.error.message).toContain('expected number');
     });
   });
 

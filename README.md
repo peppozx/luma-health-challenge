@@ -24,7 +24,8 @@ luma-health-challenge/
 │   │   ├── repositories/      # Repository implementations
 │   │   ├── api/              # REST API layer
 │   │   │   ├── controllers/   # Request handlers
-│   │   │   ├── middlewares/   # Express middlewares
+│   │   │   ├── middlewares/   # Express middlewares (validation, error handling)
+│   │   │   ├── validations/   # Zod validation schemas
 │   │   │   └── routes/        # Route definitions
 │   │   └── config/           # Configuration files
 │   ├── shared/               # Shared utilities
@@ -211,6 +212,7 @@ docker-compose up
 - **Runtime**: Node.js
 - **Language**: TypeScript
 - **Framework**: Express.js
+- **Validation**: Zod (schema validation)
 - **Testing**: Jest
 - **Development**: Nodemon, ts-node
 - **Containerization**: Docker
