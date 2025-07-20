@@ -24,7 +24,7 @@ export class ScoringService {
   private readonly config: ScoringConfig;
 
   constructor(config?: Partial<ScoringConfig>) {
-    this.config = {
+    const defaultConfig: ScoringConfig = {
       weights: {
         demographic: {
           age: 0.10,
@@ -41,7 +41,24 @@ export class ScoringService {
         maxBoost: 0.2,
         lowDataThreshold: 20,
       },
-      ...config,
+    };
+
+    // Deep merge the configuration
+    this.config = {
+      weights: {
+        demographic: {
+          ...defaultConfig.weights.demographic,
+          ...(config?.weights?.demographic || {}),
+        },
+        behavioral: {
+          ...defaultConfig.weights.behavioral,
+          ...(config?.weights?.behavioral || {}),
+        },
+      },
+      randomnessConfig: {
+        ...defaultConfig.randomnessConfig,
+        ...(config?.randomnessConfig || {}),
+      },
     };
   }
 
