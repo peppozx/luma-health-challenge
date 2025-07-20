@@ -19,19 +19,22 @@ app.use(`${AppConfig.apiPrefix}/patients`, createPatientRoutes());
 
 app.use(errorHandler);
 
-const server = app.listen(AppConfig.port, () => {
-  logger.info(`Server running on port ${AppConfig.port}`);
-  logger.info(`Environment: ${AppConfig.nodeEnv}`);
-  logger.info(`API available at http://localhost:${AppConfig.port}${AppConfig.apiPrefix}`);
-});
-
-// Graceful shutdown
-process.on('SIGTERM', () => {
-  logger.info('SIGTERM signal received: closing HTTP server');
-  server.close(() => {
-    logger.info('HTTP server closed');
-    process.exit(0);
+// Only start the server if this file is run directly
+if (require.main === module) {
+  const server = app.listen(AppConfig.port, () => {
+    logger.info(`Server running on port ${AppConfig.port}`);
+    logger.info(`Environment: ${AppConfig.nodeEnv}`);
+    logger.info(`API available at http://localhost:${AppConfig.port}${AppConfig.apiPrefix}`);
   });
-});
+
+  // Graceful shutdown
+  process.on('SIGTERM', () => {
+    logger.info('SIGTERM signal received: closing HTTP server');
+    server.close(() => {
+      logger.info('HTTP server closed');
+      process.exit(0);
+    });
+  });
+}
 
 export default app;
