@@ -8,13 +8,11 @@ import './documentation/routes'; // Then register routes
 export function setupDocumentation(app: Application): void {
   const openAPIDocument = generateOpenAPIDocument();
 
-  // Serve Swagger UI
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(openAPIDocument, {
     customCss: '.swagger-ui .topbar { display: none }',
     customSiteTitle: 'Patient Waitlist API Documentation',
   }));
 
-  // Serve OpenAPI JSON spec
   app.get('/api-docs.json', (_req, res) => {
     res.json(openAPIDocument);
   });
