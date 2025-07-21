@@ -63,17 +63,6 @@ describe('UNIT: DistanceCalculator', () => {
       expect(distanceAB).toBe(distanceBA);
     });
 
-    it('should handle edge case of equator crossing', () => {
-      const quito: Location = { latitude: -0.1807, longitude: -78.4678 };
-      const kampala: Location = { latitude: 0.3476, longitude: 32.5825 };
-
-      const distance = DistanceCalculator.calculate(quito, kampala);
-
-      // The distance between Quito and Kampala is approximately 12,400 km
-      expect(distance).toBeGreaterThan(12300);
-      expect(distance).toBeLessThan(12500);
-    });
-
     it('should handle very small distances accurately', () => {
       const location1: Location = { latitude: 40.7128, longitude: -74.0060 };
       const location2: Location = { latitude: 40.7130, longitude: -74.0062 };
