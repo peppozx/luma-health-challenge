@@ -5,7 +5,8 @@ registry.registerPath({
   path: '/api/patients/prioritized',
   tags: ['Patients'],
   summary: 'Get prioritized patient list',
-  description: 'Returns a list of up to 10 patients prioritized by their likelihood to accept appointments',
+  description:
+    'Returns a list of up to 10 patients prioritized by their likelihood to accept appointments',
   request: {
     body: {
       content: {

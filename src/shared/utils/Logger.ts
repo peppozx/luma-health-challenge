@@ -36,7 +36,7 @@ export class Logger {
     }
   }
 
-  error(message: string, error?: Error | any): void {
+  error(message: string, error?: Error): void {
     this.log(LogLevel.ERROR, message, {
       error: error?.message || error,
       stack: error?.stack,

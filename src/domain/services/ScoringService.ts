@@ -1,4 +1,4 @@
-import { Patient, ScoredPatient, Location } from '../entities/Patient';
+import type { Patient, ScoredPatient, Location } from '../entities/Patient';
 import { DistanceCalculator } from './DistanceCalculator';
 
 /**
@@ -64,13 +64,13 @@ export class ScoringService {
     const defaultConfig: ScoringConfig = {
       weights: {
         demographic: {
-          age: 0.10,
-          distance: 0.10,
+          age: 0.1,
+          distance: 0.1,
         },
         behavioral: {
-          acceptedOffers: 0.30,
-          canceledOffers: 0.30,
-          averageReplyTime: 0.20,
+          acceptedOffers: 0.3,
+          canceledOffers: 0.3,
+          averageReplyTime: 0.2,
         },
       },
       randomnessConfig: {
@@ -150,7 +150,7 @@ export class ScoringService {
     // Calculate weighted demographic score (normalized to 0-10)
     const demographicScore =
       (ageScore * this.config.weights.demographic.age +
-      distanceScore * this.config.weights.demographic.distance) /
+        distanceScore * this.config.weights.demographic.distance) /
       (this.config.weights.demographic.age + this.config.weights.demographic.distance);
 
     // Calculate weighted behavioral score (normalized to 0-10)
@@ -160,8 +160,11 @@ export class ScoringService {
       this.config.weights.behavioral.averageReplyTime;
 
     const behavioralScore =
-      (acceptanceRateScore * (this.config.weights.behavioral.acceptedOffers + this.config.weights.behavioral.canceledOffers) +
-      responseTimeScore * this.config.weights.behavioral.averageReplyTime) / totalBehavioralWeight;
+      (acceptanceRateScore *
+        (this.config.weights.behavioral.acceptedOffers +
+          this.config.weights.behavioral.canceledOffers) +
+        responseTimeScore * this.config.weights.behavioral.averageReplyTime) /
+      totalBehavioralWeight;
 
     // Calculate final score: 20% demographic + 80% behavioral
     let finalScore = demographicScore * 0.2 + behavioralScore * 0.8;

@@ -1,8 +1,8 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import { Patient } from '../../domain/entities/Patient';
-import { PatientRepository } from '../../domain/repositories/PatientRepository';
+import type { Patient } from '../../domain/entities/Patient';
+import type { PatientRepository } from '../../domain/repositories/PatientRepository';
 
 export class InMemoryPatientRepository implements PatientRepository {
   private patients: Patient[] = [];
@@ -16,7 +16,7 @@ export class InMemoryPatientRepository implements PatientRepository {
   }
 
   async findById(id: string): Promise<Patient | null> {
-    const patient = this.patients.find(p => p.id === id);
+    const patient = this.patients.find((p) => p.id === id);
     return patient || null;
   }
 
@@ -26,9 +26,9 @@ export class InMemoryPatientRepository implements PatientRepository {
 
       if (fs.existsSync(dataPath)) {
         const rawData = fs.readFileSync(dataPath, 'utf-8');
-        const parsedData = JSON.parse(rawData);
+        const parsedData = JSON.parse(rawData) as Patient[];
 
-        this.patients = parsedData.map((item: any) => ({
+        this.patients = parsedData.map((item: Patient) => ({
           id: item.id,
           name: item.name,
           location: {

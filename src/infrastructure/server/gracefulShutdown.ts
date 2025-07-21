@@ -1,4 +1,4 @@
-import { Server } from 'http';
+import type { Server } from 'http';
 
 import { logger } from '../../shared/utils/Logger';
 
@@ -26,8 +26,8 @@ export function setupGracefulShutdown(server: Server): void {
     shutdown('UNCAUGHT_EXCEPTION');
   });
 
-  process.on('unhandledRejection', (reason, promise) => {
-    logger.error(`Unhandled Rejection at: ${promise}, reason: ${reason}`);
+  process.on('unhandledRejection', (reason: string) => {
+    logger.error(`Unhandled Rejection, reason: ${reason}`);
     shutdown('UNHANDLED_REJECTION');
   });
 }

@@ -7,14 +7,14 @@ import { errorHandler } from './infrastructure/api/middlewares/ErrorHandler';
 
 export function createApp(): express.Application {
   const app = express();
-  
+
   // Setup phases - order matters!
   setupMiddlewares(app);
   setupDocumentation(app);
   setupRoutes(app);
-  
+
   // Error handling should be last
   app.use(errorHandler);
-  
+
   return app;
 }

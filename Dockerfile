@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci
+RUN npm i
 
 # Copy source code
 COPY . .
@@ -32,8 +32,10 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
+RUN npm config set registry https://registry.npmjs.org/
+
 # Install only production dependencies
-RUN npm ci --only=production && \
+RUN npm i --only=production && \
     npm cache clean --force
 
 # Copy built application from builder stage

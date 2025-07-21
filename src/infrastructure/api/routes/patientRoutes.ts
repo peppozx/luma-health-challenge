@@ -15,10 +15,8 @@ export const createPatientRoutes = (): Router => {
   const getPrioritizedPatients = new GetPrioritizedPatients(patientRepository, scoringService);
   const patientController = new PatientController(getPrioritizedPatients);
 
-  router.post(
-    '/prioritized', 
-    validateRequest(getPrioritizedPatientsSchema),
-    (req, res, next) => patientController.getPrioritized(req, res, next)
+  router.post('/prioritized', validateRequest(getPrioritizedPatientsSchema), (req, res, next) =>
+    patientController.getPrioritized(req, res, next),
   );
 
   return router;

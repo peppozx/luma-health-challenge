@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from 'express';
+import type { Request, Response, NextFunction } from 'express';
 
 import { AppError } from '../../../shared/errors/AppError';
 import { logger } from '../../../shared/utils/Logger';
@@ -7,7 +7,7 @@ export const errorHandler = (
   err: Error,
   _req: Request,
   res: Response,
-  _next: NextFunction
+  _next: NextFunction,
 ): void => {
   if (err instanceof AppError) {
     logger.error(`AppError: ${err.message}`, err);

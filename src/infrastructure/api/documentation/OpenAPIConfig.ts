@@ -1,7 +1,6 @@
 import { OpenAPIRegistry, OpenApiGeneratorV3 } from '@asteasolutions/zod-to-openapi';
 
 export const registry = new OpenAPIRegistry();
-const version = require('../../../../package.json').version;
 
 export const generateOpenAPIDocument = () => {
   const generator = new OpenApiGeneratorV3(registry.definitions);
@@ -9,7 +8,7 @@ export const generateOpenAPIDocument = () => {
   return generator.generateDocument({
     openapi: '3.0.0',
     info: {
-      version,
+      version: '1.0.0',
       title: 'Patient Waitlist API',
       description: 'API for optimizing patient waitlist based on acceptance likelihood',
       contact: {
