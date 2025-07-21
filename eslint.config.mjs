@@ -37,18 +37,10 @@ export default tseslint.config(
       ],
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/require-await': 'warn',
-      '@typescript-eslint/no-unsafe-assignment': 'warn',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
       '@typescript-eslint/no-redundant-type-constituents': 'warn',
       '@typescript-eslint/no-non-null-assertion': 'error',
-      '@typescript-eslint/strict-boolean-expressions': [
-        'warn',
-        {
-          allowNullableObject: true,
-          allowNullableBoolean: true,
-          allowNullableString: true,
-          allowNullableNumber: true,
-        },
-      ],
+      '@typescript-eslint/strict-boolean-expressions': 'off',
       '@typescript-eslint/consistent-type-imports': [
         'error',
         {

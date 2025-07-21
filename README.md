@@ -8,8 +8,6 @@ This system addresses the inefficiency in hospital appointment scheduling where 
 
 ## 🏗️ Architecture
 
-The project follows **Clean Architecture** principles with clear separation of concerns:
-
 ```
 luma-health-challenge/
 ├── src/
@@ -24,25 +22,29 @@ luma-health-challenge/
 │   │   ├── repositories/      # Repository implementations
 │   │   ├── api/              # REST API layer
 │   │   │   ├── controllers/   # Request handlers
-│   │   │   ├── middlewares/   # Express middlewares (validation, error handling)
-│   │   │   ├── validations/   # Zod validation schemas
-│   │   │   └── routes/        # Route definitions
-│   │   └── config/           # Configuration files
+│   │   │   ├── documentation/ # OpenAPI/Swagger setup
+│   │   │   ├── middlewares/   # Express middlewares
+│   │   │   ├── routes/        # Route definitions
+│   │   │   └── validations/   # Zod validation schemas
+│   │   ├── config/           # Configuration files
+│   │   └── server/           # Server utilities
 │   ├── shared/               # Shared utilities
 │   │   ├── errors/           # Custom error classes
 │   │   └── utils/            # Utility functions
+│   ├── app.ts                # Express app setup
+│   ├── server.ts             # Server initialization
 │   └── index.ts              # Application entry point
 ├── tests/
 │   ├── unit/                 # Unit tests
 │   ├── integration/          # Integration tests
 │   └── fixtures/             # Test data
-├── docker/
-│   └── Dockerfile            # Docker configuration
-├── .env.example              # Environment variables template
+├── Dockerfile                # Production Docker config
+├── Dockerfile.dev            # Development Docker config
 ├── docker-compose.yml        # Docker compose configuration
 ├── package.json              # Node.js dependencies
 ├── tsconfig.json             # TypeScript configuration
 ├── jest.config.js            # Jest test configuration
+├── eslint.config.mjs         # ESLint configuration
 └── nodemon.json              # Nodemon configuration
 ```
 
@@ -113,6 +115,12 @@ npm run build
 npm start
 ```
 
+The API will be available at `http://localhost:3000`
+
+**API Documentation:**
+- Swagger UI: `http://localhost:3000/api-docs`
+- OpenAPI JSON: `http://localhost:3000/api-docs.json`
+
 ### Running Tests
 
 ```bash
@@ -149,6 +157,9 @@ The scoring system evaluates patients on a scale of 1-10 based on:
 Patients with limited interaction history receive a random boost (up to 20%) to ensure fair opportunity for new patients.
 
 ## 🔌 API Documentation
+
+### Interactive Documentation
+Visit `http://localhost:3000/api-docs` for interactive Swagger UI documentation with live API testing.
 
 ### Endpoints
 
@@ -187,24 +198,13 @@ Returns a prioritized list of 10 patients most likely to accept appointments.
 
 - **Unit Tests**: Test individual components in isolation
 - **Integration Tests**: Test API endpoints and data flow
-- **Test Coverage**: Aim for >80% code coverage
 
 ## 🐳 Docker Support
 
 Build and run with Docker:
 
 ```bash
-# Build image
-docker build -t patient-waitlist .
-
-# Run container
-docker run -p 3000:3000 patient-waitlist
-```
-
-Or use Docker Compose:
-
-```bash
-docker-compose up
+docker compose up (api-dev | api)
 ```
 
 ## 🛠️ Technology Stack
@@ -219,7 +219,7 @@ docker-compose up
 
 ## 📈 Performance Considerations
 
-- Algorithm complexity: O(n log n) due to sorting
+- Algorithm complexity: ~ O(n) due to sorting
 - Suitable for datasets up to 10,000 patients
 - For larger datasets, consider implementing:
   - Caching mechanisms

@@ -9,7 +9,5 @@ export function setupMiddlewares(app: Application): void {
   // Add more middlewares here as needed:
   // - CORS
   // - Helmet for security
-  // - Morgan for logging
-  // - Compression
-  // - Rate limiting
+  // ...
 }

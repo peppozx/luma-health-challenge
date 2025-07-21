@@ -2,8 +2,8 @@ import type { Application } from 'express';
 import swaggerUi from 'swagger-ui-express';
 
 import { generateOpenAPIDocument } from './documentation/OpenAPIConfig';
-import './documentation/schemas'; // Register schemas first
-import './documentation/routes'; // Then register routes
+import './documentation/schemas';
+import './documentation/routes';
 
 export function setupDocumentation(app: Application): void {
   const openAPIDocument = generateOpenAPIDocument();

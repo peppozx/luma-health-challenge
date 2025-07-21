@@ -1,7 +1,7 @@
 import { ScoringService, ScoringConfig } from '../../../../src/domain/services/ScoringService';
 import { Patient, Location } from '../../../../src/domain/entities/Patient';
 
-describe('ScoringService', () => {
+describe('UNIT: ScoringService', () => {
   let scoringService: ScoringService;
   const facilityLocation: Location = { latitude: 40.7128, longitude: -74.0060 };
 
@@ -226,7 +226,7 @@ describe('ScoringService', () => {
       };
 
       // Run multiple times to test randomness
-      const scores = Array(10).fill(null).map(() => 
+      const scores = Array(10).fill(null).map(() =>
         scoringService.calculateScore(lowInteractionPatient, facilityLocation).score
       );
 
@@ -247,7 +247,7 @@ describe('ScoringService', () => {
       };
 
       // Run multiple times - scores should be consistent
-      const scores = Array(10).fill(null).map(() => 
+      const scores = Array(10).fill(null).map(() =>
         scoringService.calculateScore(highInteractionPatient, facilityLocation).score
       );
 
@@ -271,7 +271,7 @@ describe('ScoringService', () => {
         averageReplyTime: 600,
       };
 
-      const scores = Array(10).fill(null).map(() => 
+      const scores = Array(10).fill(null).map(() =>
         noRandomnessService.calculateScore(lowInteractionPatient, facilityLocation).score
       );
 

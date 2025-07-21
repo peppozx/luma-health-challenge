@@ -12,12 +12,12 @@ export class InMemoryPatientRepository implements PatientRepository {
   }
 
   async findAll(): Promise<Patient[]> {
-    return [...this.patients];
+    return Promise.resolve([...this.patients]);
   }
 
   async findById(id: string): Promise<Patient | null> {
     const patient = this.patients.find((p) => p.id === id);
-    return patient || null;
+    return Promise.resolve(patient || null);
   }
 
   private loadPatientsFromFile(): void {
@@ -42,6 +42,7 @@ export class InMemoryPatientRepository implements PatientRepository {
         }));
       } else {
         console.warn('sample.json not found. Repository initialized with empty data.');
+        this.patients = [];
       }
     } catch (error) {
       console.error('Error loading patient data:', error);

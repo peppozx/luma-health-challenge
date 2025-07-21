@@ -15,7 +15,7 @@ describe('UNIT: DistanceCalculator', () => {
 
       const distance = DistanceCalculator.calculate(newYork, losAngeles);
 
-      // The distance between NYC and LA is approximately 3935 km
+      // The shortest distance between NYC and LA is approximately 3935 km
       expect(distance).toBeGreaterThan(3900);
       expect(distance).toBeLessThan(3970);
     });
@@ -26,7 +26,7 @@ describe('UNIT: DistanceCalculator', () => {
 
       const distance = DistanceCalculator.calculate(london, paris);
 
-      // The distance between London and Paris is approximately 344 km
+      // The shortest distance between London and Paris is approximately 344 km
       expect(distance).toBeGreaterThan(340);
       expect(distance).toBeLessThan(350);
     });
@@ -48,7 +48,7 @@ describe('UNIT: DistanceCalculator', () => {
 
       const distance = DistanceCalculator.calculate(buenosAires, sydney);
 
-      // The distance between Buenos Aires and Sydney is approximately 11,800 km
+      // The shortest distance between Buenos Aires and Sydney is approximately 11,800 km
       expect(distance).toBeGreaterThan(11700);
       expect(distance).toBeLessThan(11900);
     });
