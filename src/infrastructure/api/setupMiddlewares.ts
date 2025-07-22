@@ -1,4 +1,4 @@
-import type { Application } from 'express';
+import { Application } from 'express';
 import express from 'express';
 
 export function setupMiddlewares(app: Application): void {

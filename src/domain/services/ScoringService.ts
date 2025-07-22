@@ -1,4 +1,6 @@
-import type { Patient, ScoredPatient, Location } from '../entities/Patient';
+import { Service } from 'typedi';
+
+import { Patient, ScoredPatient, Location } from '../entities/Patient';
 import { DistanceCalculator } from './DistanceCalculator';
 
 /**
@@ -57,6 +59,7 @@ export interface ScoringConfig {
  * console.log(`Patient score: ${scoredPatient.score}/10`);
  * ```
  */
+@Service()
 export class ScoringService {
   private readonly config: ScoringConfig;
 

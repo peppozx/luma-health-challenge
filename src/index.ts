@@ -1,5 +1,10 @@
+import 'reflect-metadata';
+
 import { createApp } from './app';
+import { setupContainer } from './infrastructure/config/DIContainer';
 import { startServer } from './server';
+
+setupContainer();
 
 const app = createApp();
 

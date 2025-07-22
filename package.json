@@ -44,7 +44,9 @@
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "geolib": "^3.3.4",
+    "reflect-metadata": "^0.2.2",
     "swagger-ui-express": "^5.0.1",
+    "typedi": "^0.10.0",
     "zod": "^4.0.5"
   }
 }

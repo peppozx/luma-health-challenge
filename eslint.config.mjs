@@ -41,12 +41,7 @@ export default tseslint.config(
       '@typescript-eslint/no-redundant-type-constituents': 'warn',
       '@typescript-eslint/no-non-null-assertion': 'error',
       '@typescript-eslint/strict-boolean-expressions': 'off',
-      '@typescript-eslint/consistent-type-imports': [
-        'error',
-        {
-          prefer: 'type-imports',
-        },
-      ],
+      '@typescript-eslint/consistent-type-imports': 'off',
       '@typescript-eslint/naming-convention': [
         'error',
         {

@@ -1,6 +1,6 @@
 import { getDistance } from 'geolib';
 
-import type { Location } from '../entities/Patient';
+import { Location } from '../entities/Patient';
 
 /**
  * Utility class for calculating distances between geographic coordinates.

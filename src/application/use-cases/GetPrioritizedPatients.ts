@@ -1,15 +1,20 @@
-import type { PatientRepository } from '../../domain/repositories/PatientRepository';
-import type { ScoringService } from '../../domain/services/ScoringService';
-import type { Location, ScoredPatient } from '../../domain/entities/Patient';
-import type {
+import { Service } from 'typedi';
+
+import { ScoringService } from '../../domain/services/ScoringService';
+import { InMemoryPatientRepository } from '../../infrastructure/repositories/InMemoryPatientRepository';
+import { Location, ScoredPatient } from '../../domain/entities/Patient';
+import {
   GetPrioritizedPatientsRequestDTO,
   GetPrioritizedPatientsResponseDTO,
   PrioritizedPatientDTO,
 } from '../dto/PrioritizedPatientDTO';
 
+@Service()
 export class GetPrioritizedPatients {
   constructor(
-    private readonly patientRepository: PatientRepository,
+    // The idea was to use PatientRepository interface here, but since typeDI
+    // injects dependencies based on class names, we need to use the concrete implementation
+    private readonly patientRepository: InMemoryPatientRepository,
     private readonly scoringService: ScoringService,
   ) {}
 

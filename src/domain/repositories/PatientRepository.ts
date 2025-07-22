@@ -1,4 +1,4 @@
-import type { Patient } from '../entities/Patient';
+import { Patient } from '../entities/Patient';
 
 export interface PatientRepository {
   findAll(): Promise<Patient[]>;

@@ -1,5 +1,5 @@
-import type { Application } from 'express';
-import type { Server } from 'http';
+import { Application } from 'express';
+import { Server } from 'http';
 import { createServer } from 'http';
 
 import { AppConfig } from './infrastructure/config/AppConfig';

@@ -1,4 +1,4 @@
-import type { Application } from 'express';
+import { Application } from 'express';
 import swaggerUi from 'swagger-ui-express';
 
 import { generateOpenAPIDocument } from './documentation/OpenAPIConfig';

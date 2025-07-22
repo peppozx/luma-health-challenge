@@ -1,9 +1,11 @@
-import type { Request, Response, NextFunction } from 'express';
+import { Service } from 'typedi';
+import { Request, Response, NextFunction } from 'express';
 
-import type { GetPrioritizedPatients } from '../../../application/use-cases/GetPrioritizedPatients';
-import type { Facility } from '../../../domain/entities/Facility';
+import { GetPrioritizedPatients } from '../../../application/use-cases/GetPrioritizedPatients';
+import { Facility } from '../../../domain/entities/Facility';
 import { logger } from '../../../shared/utils/Logger';
 
+@Service()
 export class PatientController {
   constructor(private readonly getPrioritizedPatients: GetPrioritizedPatients) {}
 

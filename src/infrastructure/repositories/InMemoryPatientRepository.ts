@@ -1,9 +1,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-import type { Patient } from '../../domain/entities/Patient';
-import type { PatientRepository } from '../../domain/repositories/PatientRepository';
+import { Service } from 'typedi';
 
+import { Patient } from '../../domain/entities/Patient';
+import { PatientRepository } from '../../domain/repositories/PatientRepository';
+
+@Service()
 export class InMemoryPatientRepository implements PatientRepository {
   private patients: Patient[] = [];
 

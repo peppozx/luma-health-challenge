@@ -1,4 +1,4 @@
-import type { Location } from './Patient';
+import { Location } from './Patient';
 
 export interface Facility {
   location: Location;

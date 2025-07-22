@@ -1,4 +1,4 @@
-import type { Server } from 'http';
+import { Server } from 'http';
 
 import { logger } from '../../shared/utils/Logger';
 

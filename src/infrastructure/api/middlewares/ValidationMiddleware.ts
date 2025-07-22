@@ -1,8 +1,7 @@
-import type { Request, Response, NextFunction } from 'express';
-import type { ParamsDictionary } from 'express-serve-static-core';
-import type { ParsedQs } from 'qs';
-import type { ZodSchema } from 'zod';
-import { ZodError } from 'zod';
+import { Request, Response, NextFunction } from 'express';
+import { ParamsDictionary } from 'express-serve-static-core';
+import { ParsedQs } from 'qs';
+import { ZodError, ZodSchema } from 'zod';
 
 import { ValidationError } from '../../../shared/errors/AppError';
 

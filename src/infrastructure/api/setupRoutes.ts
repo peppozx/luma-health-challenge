@@ -1,4 +1,4 @@
-import type { Application } from 'express';
+import { Application } from 'express';
 
 import { AppConfig } from '../config/AppConfig';
 import { createPatientRoutes } from './routes/patientRoutes';
